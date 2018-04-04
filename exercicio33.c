@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 void soma(){ 
     float valor1, valor2, result; 
@@ -49,38 +50,50 @@ void multiplica(){
     system("cls");
     menu();
 }
-void menu(){ 
-    int escolha;
+void fatorial(){
+    int nFat;
+        nFat = 1;
 
-    printf("\t\tBem vindo a calculadora em C\n\n"); 
+    if (n == 0){
+        return 1;
+    }
+    else if (n < 0){
+        printf("Erro! Nao existe fatorial de numero negativo");
+    }
+    while (n >= 1){
+        nFat = nFat * n;
+        n = n - 1;
+    }
+    return nFat;
+    system ("pause");
+    system("cls");
+    menu();
+}
+void exponencial(){
+    float ex, termo;
+    int num,fatorial;
+        ex = 0;
+        num = 0;
 
-    printf("Selecione uma operacao matematica:\n"); 
-    printf("\t1- Adicao\n");
-    printf("\t2- Subtracao\n");
-    printf("\t3- Divisao\n");
-    printf("\t4- Multiplicacao\n");
-    printf("\t5- Sair\n");
-    printf("Operacao: "); 
-    scanf ("%d", &escolha);
+    while (termo > 0.0001){
+        termo = pow(x,num)/fatorial(num);
+        num = num + 1;
+        ex = ex + termo;
+    }
+		case 5:
+            fatorial();
+        break;
+		
+		case 6:
+            exponencial();
+        break;
+		
+		case 7:
+            radiacao();
 
-    switch (escolha){ 
-        case 1:
-            soma(); 
-        break; 
-
-        case 2:
-            subtrai();
         break;
 
-        case 3:
-            divide();
-        break;
-
-        case 4:
-            multiplica();
-            break;
-
-        case 5:
+        case 8:
             system("exit");
             printf("\nFinalizando...\n\n"); 
         break; 
